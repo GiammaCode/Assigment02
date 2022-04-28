@@ -6,11 +6,15 @@
 class Potentiometer{
 
     private:
-    
+        byte pin;
 
+    public:
 
-}
+        Potentiometer(byte pin);
 
+        void init();
 
+        int GetValue();
+};
 
 #endif
