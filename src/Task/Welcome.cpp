@@ -7,7 +7,6 @@ Welcome::Welcome(){
 
 void Welcome::init(int myPeriod){
     Task::init(myPeriod);
-    lcd.begin(pinSDA,pinSCL);
     lcd.init();
     lcd.backlight();
 }
