@@ -2,7 +2,7 @@
 
 
 Welcome::Welcome(){
-    //forse init
+    //inizilizzare nmax per comunicazione per GUI
 }
 
 void Welcome::init(int myPeriod){
