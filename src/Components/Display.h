@@ -10,17 +10,10 @@ private:
     byte scl;
 
 public: 
-    Display();
-
     Display (byte sda, byte scl);
-
-    void print();
 
     void init();
 
-
-
-
-
+    void print(int r, int c, String s);
 };
 #endif
