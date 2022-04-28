@@ -1,5 +1,3 @@
-#ifndef __TASK__
-#define __TASK__
 
 #include "Task.h"
 
@@ -11,4 +9,3 @@ class Welcome: public Task {
     void init(int pertiod);
     
 };
-#endif
