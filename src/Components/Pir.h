@@ -3,12 +3,14 @@
 
 #include <Arduino.h>
 
-class Pir
-{
+class Pir {
+
 private:
     byte pin;
     byte state;
-    byte laststate;
+    byte lastReading;
+    unsigned long lastDebounceTime = 0;
+    unsigned long debounceDelay = 50;
 
 public:
     Pir(byte pin);
