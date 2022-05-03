@@ -1,4 +1,4 @@
-#include "Potententiometer.h"
+#include "Potentiometer.h"
 
 
 Potentiometer::Potentiometer(byte pin){

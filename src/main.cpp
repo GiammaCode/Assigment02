@@ -7,6 +7,8 @@
 #include <./Components/ServoMotorImpl.h>
 #include <./Components/Sonar.h>
 #include <./Components/Display.h> 
+#include <./Components/Potentiometer.h> 
+#include <./Components/Temp.h> 
 #include <Servo.h>
 
 
@@ -15,6 +17,8 @@ Task* t0 = new Welcome();
 Pir* p = new Pir(2);
 ServoMotor* motor = new ServoMotorImpl(3);
 Sonar* sonar = new Sonar(4,5);
+Potentiometer* pot = new Potentiometer(A0);
+Temp* temp = new Temp(A1);
 
 int pos = 0;
 
@@ -26,6 +30,8 @@ void setup() {
   sonar->init();
   Serial.begin(9600);
   Serial.println("init");
+  pot->init();
+  temp->init();
    
 }
   
@@ -36,6 +42,10 @@ void loop() {
   t0->tick();
   Serial.print("dist:  ");
   Serial.println(sonar->getDistance());
-
+  Serial.print("pot:  ");
+  Serial.println(pot->GetValue());
+  Serial.print("temp:  ");
+  Serial.println(temp->getTemp());
+  delay(2000);
   
 }
