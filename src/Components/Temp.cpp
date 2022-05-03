@@ -9,7 +9,7 @@ void Temp::init(){
 
 }
 
-double Temp::getTemp(){
+double  Temp::getTemp(){
     int value = analogRead(A0);
   
   /* value : 1023 = value_in_mV : 5000 */
