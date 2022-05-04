@@ -49,10 +49,10 @@ void loop() {
   Serial.println(pot->GetValue());
   Serial.print("temp:  ");
   Serial.println(temp->getTemp());
-  Serial.print("pir:  ");
-  Serial.println(p->getState());*/
   Serial.print("button:  ");
-  Serial.println(btn->isPressed()); 
+  Serial.println(btn->isPressed()); */
+  Serial.print("pir:  ");
+  Serial.println(p->getState());
  
   delay(100);
   
