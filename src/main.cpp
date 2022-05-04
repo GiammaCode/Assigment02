@@ -9,7 +9,8 @@
 #include <./Components/Display.h> 
 #include <./Components/Potentiometer.h> 
 #include <./Components/Temp.h> 
-#include <Servo.h>
+#include <./Components/Button.h> 
+#include <Servo.h> 
 
 
 
@@ -19,6 +20,7 @@ ServoMotor* motor = new ServoMotorImpl(3);
 Sonar* sonar = new Sonar(4,5);
 Potentiometer* pot = new Potentiometer(A0);
 Temp* temp = new Temp(A1);
+Button* btn = new Button(6);
 
 int pos = 0;
 
@@ -32,7 +34,8 @@ void setup() {
   Serial.println("init");
   pot->init();
   temp->init();
-   
+  p->init();
+  btn->init();
 }
   
 
@@ -40,12 +43,17 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   t0->tick();
-  Serial.print("dist:  ");
+ /* Serial.print("dist:  ");
   Serial.println(sonar->getDistance());
   Serial.print("pot:  ");
   Serial.println(pot->GetValue());
   Serial.print("temp:  ");
   Serial.println(temp->getTemp());
-  delay(2000);
+  Serial.print("pir:  ");
+  Serial.println(p->getState());*/
+  Serial.print("button:  ");
+  Serial.println(btn->isPressed()); 
+ 
+  delay(100);
   
 }
