@@ -1,29 +1,38 @@
 #ifndef __BUTTON__
 #define __BUTTON__
 
-#include <Arduino.h>
+#define BUTTON_PRESSED_EVENT 1
+#define BUTTON_RELEASED_EVENT 2
 
-class Button {
-  
-  private:
-    byte pin;
-    byte state;
-    byte lastReading;
-    unsigned long lastDebounceTime = 0;
-    unsigned long debounceDelay = 50;
-    
-  public:
-    Button(byte pin);
-
-    void init();
-    void update();
-
-    byte getState();
-    bool isPressed();
+class Button : public EventSource {
+public: 
+  virtual bool isPressed() = 0;
 };
 
+class ButtonPressed: public Event {
+public:
+  ButtonPressed(Button* source) : Event(BUTTON_PRESSED_EVENT){
+    this->source = source;  
+  } 
+ 
+  Button* getSource(){
+    return source;
+  } 
+private:
+  Button* source;  
+};
+
+class ButtonReleased: public Event {
+public:
+  ButtonReleased(Button* source) : Event(BUTTON_RELEASED_EVENT){
+    this->source = source;  
+  } 
+ 
+  Button* getSource(){
+    return source;
+  } 
+private:
+  Button* source;  
+};
 
 #endif
-
-
-
