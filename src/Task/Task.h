@@ -1,9 +1,13 @@
 #ifndef __TASK__
 #define __TASK__
 
+#include <State.h>
+
 class Task {
   int myPeriod;
   int timeElapsed;
+  
+
   
 public:
   virtual void init(int period){
